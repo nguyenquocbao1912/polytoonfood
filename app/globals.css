@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --green-primary: #2d9e5c;
+  --green-dark: #1a7a42;
+  --green-light: #e8f7ef;
+  --green-mid: #a8e6c1;
+  --cream: #f9faf5;
+  --cream-dark: #eef0e8;
+  --border: #1a1a1a;
+  --shadow: 4px 4px 0px #1a1a1a;
+  --shadow-sm: 2px 2px 0px #1a1a1a;
+  --shadow-lg: 6px 6px 0px #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: #1a1a1a;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+/* Neobrutalism base utilities */
+.neo-card {
+  background: #fff;
+  border: 2.5px solid #1a1a1a;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.neo-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translate(-1px, -1px);
+}
+
+.neo-card-sm {
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  border: 2.5px solid #1a1a1a;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.neo-btn:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.neo-btn-primary {
+  background: var(--green-primary);
+  color: #fff;
+}
+
+.neo-btn-primary:hover {
+  background: var(--green-dark);
+}
+
+.neo-btn-white {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.neo-btn-light {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.neo-input {
+  background: #fff;
+  border: 2.5px solid #1a1a1a;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  width: 100%;
+  outline: none;
+  transition: box-shadow 0.15s;
+}
+
+.neo-input:focus {
+  box-shadow: var(--shadow-sm);
+}
+
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1a1a1a;
+  border-radius: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Scrollbar hide utility */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Bottom nav safe area */
+.pb-safe {
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Domino Dots Loading Animation */
+.domino-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.domino-dots div {
+  width: 12px;
+  height: 12px;
+  background-color: var(--green-primary);
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  animation: domino 1.2s infinite ease-in-out both;
+}
+
+.domino-dots div:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.domino-dots div:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes domino {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
